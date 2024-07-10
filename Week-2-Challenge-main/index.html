@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Week 2 Challenge</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      width: 200px;
+      margin-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 8px 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    ul.shopping-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul.shopping-list li {
+      background-color: #fff;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ul.shopping-list li button {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    ul.shopping-list li button:hover {
+      background-color: #e53935;
+    }
+
+    #clear {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #clear:hover {
+      background-color: #e53935;
+    }
+  </style>
+</head>
+<body>
+  <h1>Shopping List</h1>
+  <form>
+    <label for="input">Add item to shopping list:</label>
+    <input type="text" id="input" required />
+    <button id="add">Add</button>
+  </form>
+
+  <button id="clear">Clear List</button>
+  
+  <ul class="shopping-list">
+    <li>Sample item <button>Mark Purchased</button></li>
+  </ul>
+
+  <script src="script.js"></script>
+</body>
+</html>
