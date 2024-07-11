@@ -1,34 +1,28 @@
-const form = document.querySelector("form");
-const input = document.querySelector("#input");
-const addButton = document.querySelector("button#add");
-const shoppingList = document.querySelector("ul.shopping-list");
-const clearButton = document.querySelector("button#clear");
+const addedItems = [];
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
+function addItem() {
+  const input = document.getElementById('myInput');
+  const list = document.getElementById('list');
 
-  const item = input.value;
+  if (input.value.trim() !== "") {
+    const li = document.createElement('li');
+    li.textContent = input.value;
 
-  const listItem = document.createElement("li");
-  listItem.textContent = item;
+    const markButton = document.createElement('button');
+    markButton.textContent = 'Mark as Purchased';
+    markButton.onclick = function() {
+      li.classList.toggle('purchased');
+    };
 
-  const markPurchasedButton = document.createElement("button");
-  markPurchasedButton.textContent = "Mark Purchased";
-
-  listItem.appendChild(markPurchasedButton);
-
-  shoppingList.appendChild(listItem);
-
-  input.value = "";
-});
-
-clearButton.addEventListener("click", function () {
-  shoppingList.innerHTML = "";
-});
-
-shoppingList.addEventListener("click", function (event) {
-  if (event.target.matches("button")) {
-    const listItem = event.target.parentElement;
-    listItem.style.textDecoration = "line-through"
+    li.appendChild(markButton);
+    list.appendChild(li);
+    addedItems.push(input.value);
+    input.value = '';
   }
-});
+}
+
+function clearList() {
+  const list = document.getElementById('list');
+  list.innerHTML = '';
+  addedItems.length = 0;
+}
